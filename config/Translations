@@ -1,0 +1,30 @@
+{
+    "_version": "0.6.0",
+    "languages": [
+        {
+            "code": "en",
+            "flag": "FlagUnitedKingdomActorSpec",
+            "localizedName": "English",
+            "name": "English"
+        },
+        {
+            "code": "de",
+            "flag": "FlagGermanyActorSpec",
+            "localizedName": "Deutsch",
+            "name": "German"
+        },
+        {
+            "code": "es",
+            "flag": "FlagSpainActorSpec",
+            "localizedName": "Español",
+            "name": "Spanish"
+        }
+    ],
+    "translations": {
+        "Pong": {
+            "de": "Ein Pong-Klon",
+            "en": "A Pong Clone",
+            "es": "Un clon de Pong"
+        }
+    }
+}
