@@ -46,7 +46,7 @@ void PongState::enter(void* owner __attribute__((unused)))
     PongState::configureStage(this, (StageSpec*)&PongStageSpec, NULL);
 
 	// Create the Pong game controller
-	// this->pongManager = new PongManager(this->stage);
+	this->pongManager = new PongManager(this->stage);
 
 	// Start clocks to start animations, physics, etc
     PongState::startClocks(this);
@@ -84,6 +84,17 @@ void PongState::processUserInput(const UserInput* userInput)
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
+void PongState::exit(void* owner __attribute__((unused)))
+{
+	if (!isDeleted(this->pongManager)) 
+	{
+		delete this->pongManager;
+	}
+	this->pongManager = NULL;
+
+	Base::exit(this, owner);
+}
+
 //——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 // CLASS' PRIVATE METHODS
 //——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -94,6 +105,8 @@ void PongState::constructor()
 {
 	// Always explicitly call the base's constructor
 	Base::constructor();
+
+	this->pongManager = NULL;
 }
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————

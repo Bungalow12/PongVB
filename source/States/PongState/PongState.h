@@ -6,6 +6,7 @@
 //——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 #include <GameState.h>
+#include <PongManager.h>
 
 //——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 // CLASS' DECLARATION
@@ -17,8 +18,13 @@
 /// Inherits from GameState
 ///
 /// Implements a game of pong
-singleton class PongState : GameState
+singleton class PongState : GameState\
 {
+	/// @protectedsection
+
+	// Manager for the Pong game logic
+	PongManager pongManager;
+
 	/// @publicsection
 
     /// Method to get the singleton instance
@@ -36,6 +42,10 @@ singleton class PongState : GameState
 	/// Prepares the object to become active in this state.
 	/// @param owner: Object that is in this state
 	override void resume(void* owner);
+
+	/// Prepares the object to exit this state.
+	/// @param owner: Object that is exiting this state
+	override void exit(void* owner);
 
 	/// Process the provided user input.
     /// @param userInput: Struct with the current user input information
