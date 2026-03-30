@@ -18,7 +18,7 @@
 /// Inherits from GameState
 ///
 /// Implements a game of pong
-singleton class PongState : GameState\
+singleton class PongState : GameState
 {
 	/// @protectedsection
 

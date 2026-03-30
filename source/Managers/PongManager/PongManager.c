@@ -15,7 +15,7 @@ void PongManager::constructor(Stage stage)
 
 	if (!isDeleted(stage)) 
 	{
-		Actor disk = Actor::safeCast(Stage::getChildByName(stage, (char*)"Disk", false));
+		Actor disk = Actor::safeCast(Stage::getChildByName(stage, (char*)DISK_NAME, false));
 
 		if (!isDeleted(disk))
 		{
